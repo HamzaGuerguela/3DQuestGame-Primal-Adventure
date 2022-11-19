@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class PlayerController : MonoBehaviour
     [Min(0)]
     [Tooltip("The maximum speed of the player in uu/s.")]
     [SerializeField] private float movementSpeed = 8f;
+    
+    [Min(0)]
+    [Tooltip("The maximum sprint speed of the player in uu/s.")]
+    [SerializeField] private float sprintSpeed = 10f;
     
     [Min(0)]
     [Tooltip("How fast the movement speed is in -/decreasing.")]
@@ -103,6 +108,8 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = true;
     private float airTime;
 
+    private Interactable selectedInteractable;
+
     #region Unity Event Functions
 
     private void Awake()
@@ -115,7 +122,13 @@ public class PlayerController : MonoBehaviour
         lookAction = input.Player.Look;
         moveAction = input.Player.Move;
 
-        // TODO Subscribe to input events.
+        // Subscribe to input events.
+        input.Player.Interact.performed += Interact;
+        
+        input.Player.Sprint.performed += SprintStart;
+        input.Player.Sprint.canceled += SprintFinish;
+
+        
     }
 
     private void OnEnable()
@@ -133,6 +146,7 @@ public class PlayerController : MonoBehaviour
         CheckGround();
         
         UpdateAnimator();
+        
     }
 
     private void LateUpdate()
@@ -147,8 +161,26 @@ public class PlayerController : MonoBehaviour
 
     private void OnDestroy()
     {
-        // TODO Unsubscribe from input events.
+        // Unsubscribe from input events.
+        input.Player.Interact.performed -= Interact;
+        
+        input.Player.Sprint.performed -= SprintStart;
+        input.Player.Sprint.canceled -= SprintFinish;
     }
+
+    #region Physics
+
+    private void OnTriggerEnter(Collider other)
+    {
+        TrySelectInteractable(other);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        TryDeselectInteractable(other);
+    }
+
+    #endregion
 
     #endregion
 
@@ -321,6 +353,59 @@ public class PlayerController : MonoBehaviour
         
         animator.SetFloat(MovementSpeed, speed);
         animator.SetBool(Grounded, isGrounded);
+    }
+
+    #endregion
+
+    #region Interaction
+
+    private void Interact(InputAction.CallbackContext _)
+    {
+        if (selectedInteractable != null)
+        {
+            selectedInteractable.Interact();
+        }
+    }
+
+    private void TrySelectInteractable(Collider other)
+    {
+        Interactable interactable = other.GetComponent<Interactable>();
+
+        if (interactable == null) { return; }
+
+        if (selectedInteractable != null)
+        {
+            selectedInteractable.Deselect();
+        }
+
+        selectedInteractable = interactable;
+        selectedInteractable.Select();
+    }
+
+    private void TryDeselectInteractable(Collider other)
+    {
+        Interactable interactable = other.GetComponent<Interactable>();
+
+        if (interactable == null) { return; }
+
+        if (interactable == selectedInteractable)
+        {
+            selectedInteractable.Deselect();
+            selectedInteractable = null;
+        }
+    }
+    #endregion
+    
+    #region Sprint
+
+    private void SprintStart(InputAction.CallbackContext value)
+    {
+        movementSpeed += sprintSpeed;
+    }
+    
+    private void SprintFinish(InputAction.CallbackContext value)
+    {
+        movementSpeed -= sprintSpeed;
     }
 
     #endregion

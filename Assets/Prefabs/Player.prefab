@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 8
+  sprintSpeed: 3
   speedChangeRate: 10
   rotationSpeed: 10
   pullDownForce: 5
@@ -83,6 +84,8 @@ MonoBehaviour:
   controllerCameraSensitivity: 1
   invertY: 1
   animator: {fileID: 6707154742677672459}
+  coyoteTime: 0.2
+  isSprinting: 0
 --- !u!1 &3223628951073957390
 GameObject:
   m_ObjectHideFlags: 0
