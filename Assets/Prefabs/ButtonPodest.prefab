@@ -803,6 +803,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonPodest
       objectReference: {fileID: 0}
+    - target: {fileID: 5311834387824604332, guid: 2a961778356967041a5f5ed218e06a40,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5912533818921911308, guid: 2a961778356967041a5f5ed218e06a40,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 993878135226e4c41aa71673c2967360, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a961778356967041a5f5ed218e06a40, type: 3}
 --- !u!4 &2314434460110770858 stripped

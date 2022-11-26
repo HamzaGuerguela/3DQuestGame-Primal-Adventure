@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,9 +18,25 @@ public class Interactable : MonoBehaviour
     [Tooltip("Invoked when the player deselects this Interactable, and they stop being able to interact with it.")]
     [SerializeField] private UnityEvent onDeselected;
 
+    private void Start()
+    {
+        List<Interaction> interactions = GetComponentsInChildren<Interaction>(true).ToList();
+
+        if (interactions.Count > 0)
+        {
+            interactions[0].gameObject.SetActive(true);
+        }
+    }
 
     public void Interact()
     {
+        Interaction interaction = FindActiveInteraction();
+
+        if (interaction != null)
+        {
+            interaction.Execute();
+        }
+        
         Debug.Log("Interact");
         onInteracted.Invoke();
     }
@@ -32,5 +51,10 @@ public class Interactable : MonoBehaviour
     {
         Debug.Log("Deselect");
         onDeselected.Invoke();
+    }
+
+    private Interaction FindActiveInteraction()
+    {
+        return GetComponentInChildren<Interaction>(false);
     }
 }
