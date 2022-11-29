@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        input.Enable();
+        EnableInput();
     }
 
     private void Update()
@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
-        input.Disable();
+        DisableInput();
     }
 
     private void OnDestroy()
@@ -186,6 +186,15 @@ public class PlayerController : MonoBehaviour
 
     #region Input
 
+    public void EnableInput()
+    {
+        input.Enable();
+    }
+
+    public void DisableInput()
+    {
+        input.Disable();
+    }
     private void ReadInput()
     {
         lookInput = lookAction.ReadValue<Vector2>();
@@ -401,11 +410,14 @@ public class PlayerController : MonoBehaviour
     private void SprintStart(InputAction.CallbackContext value)
     {
         movementSpeed += sprintSpeed;
+        animator.speed *= 1.3f;
+        
     }
     
     private void SprintFinish(InputAction.CallbackContext value)
     {
         movementSpeed -= sprintSpeed;
+        animator.speed = 1f;
     }
 
     #endregion
