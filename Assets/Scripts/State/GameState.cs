@@ -58,6 +58,7 @@ public class GameState : MonoBehaviour
         }
     }
 }
+
 [Serializable]
 public class State
 {

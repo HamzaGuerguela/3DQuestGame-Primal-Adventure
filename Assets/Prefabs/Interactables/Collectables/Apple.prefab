@@ -2519,6 +2519,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2966048205529595617, guid: d0e210f11eee9464f9bfbf8476b5ee5c,
+        type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Collect
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966048205529595617, guid: d0e210f11eee9464f9bfbf8476b5ee5c,
+        type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Collectable, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966048205529595617, guid: d0e210f11eee9464f9bfbf8476b5ee5c,
+        type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5482899180243155911, guid: d0e210f11eee9464f9bfbf8476b5ee5c,
         type: 3}
       propertyPath: m_RootOrder
