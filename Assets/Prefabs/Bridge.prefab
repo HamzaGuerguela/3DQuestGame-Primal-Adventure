@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 769771156246226288}
+  - component: {fileID: 8876829757754269082}
   m_Layer: 0
   m_Name: Bridge
   m_TagString: Untagged
@@ -28,11 +29,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4794156302415650949}
   - {fileID: 5714392581227034914}
+  - {fileID: 4794156302415650949}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8876829757754269082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2528268054056806991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c151924721ad74f90d81dc86c7dea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platform: {fileID: 4794156302415650949}
+  retractedPosition: {x: 16, y: 0.91, z: 1.3}
+  extendedPosition: {x: 25, y: 0.91, z: 1.3}
+  startExtended: 0
+  moveDuration: 1
 --- !u!1 &6112051946484154971
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,12 +80,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6112051946484154971}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.08, y: 0.91, z: 1.3}
+  m_LocalPosition: {x: 16, y: 0.91, z: 1.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 769771156246226288}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7876214665795049194
 MonoBehaviour:
@@ -435,7 +453,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 769771156246226288}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7168907285383359814
 MonoBehaviour:

@@ -37,19 +37,16 @@ public class Interactable : MonoBehaviour
             interaction.Execute();
         }
         
-        Debug.Log("Interact");
         onInteracted.Invoke();
     }
 
     public void Select()
     {
-        Debug.Log("Select");
         onSelected.Invoke();
     }
 
     public void Deselect()
     {
-        Debug.Log("Deselect");
         onDeselected.Invoke();
     }
 
