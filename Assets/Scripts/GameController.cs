@@ -2,16 +2,27 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+
     private PlayerController player;
     private DialogueController dialogueController;
+
+   [SerializeField] private GameObject menu;
+    private GameInput Input;
+    
+    
     
     #region UnityEventFunctions
 
     private void Awake()
     {
+        Input = new GameInput();
+        Input.UI.Escape.performed += EscapePressed;
+        
         player = FindObjectOfType<PlayerController>();
         if (player == null)
         {
@@ -28,6 +39,7 @@ public class GameController : MonoBehaviour
     private void OnEnable()
     {
         DialogueController.DialogueClosed += EndDialogue;
+        Input.Enable();
     }
 
     private void Start()
@@ -37,15 +49,24 @@ public class GameController : MonoBehaviour
 
     private void OnDisable()
     {
+        Input.Disable();
         DialogueController.DialogueClosed -= EndDialogue;
+        Input.UI.Escape.performed -= EscapePressed;
     }
 
+    private void EnterPauseMode()
+    {
+        // In the editor: Unlock with ESC.
+        Cursor.lockState = CursorLockMode.None;
+        player.DisableInput();
+    }
     private void EnterPlayMode()
     {
         // In the editor: Unlock with ESC.
         Cursor.lockState = CursorLockMode.Locked;
         player.EnableInput();
     }
+
 
     private void EnterDialogueMode()
     {
@@ -65,6 +86,35 @@ public class GameController : MonoBehaviour
     private void EndDialogue()
     {
         EnterPlayMode();
+    }
+
+    private void EscapePressed(InputAction.CallbackContext _)
+    {
+        if (menu == null)
+        {
+            return;
+        }
+        if (menu.activeInHierarchy)
+        {
+            menu.SetActive(false);
+            EnterPlayMode();
+        }
+        else if (!menu.activeInHierarchy)
+        {
+            menu.SetActive(true);
+            EnterPauseMode();
+        }
+    }
+
+    public void Continue()
+    {
+        menu.SetActive(false);
+        EnterPlayMode();
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
     
 }

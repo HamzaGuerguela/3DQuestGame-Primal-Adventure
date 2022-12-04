@@ -212,7 +212,7 @@ public class PlayerController : MonoBehaviour
             Vector3 inputDirection = new Vector3(moveInput.x, 0f, moveInput.y).normalized;
 
             Vector3 worldInputDirection = cameraTarget.TransformDirection(inputDirection);
-            worldInputDirection.y = 0f;
+            worldInputDirection.y = 0;
             
             characterTargetRotation = Quaternion.LookRotation(worldInputDirection);
         }
