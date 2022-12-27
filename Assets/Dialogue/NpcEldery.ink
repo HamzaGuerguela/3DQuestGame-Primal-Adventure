@@ -4,10 +4,10 @@
 ->ElderQuest
 =ElderQuest
 Elder: Hey there.
-Could you do me a favor ?
+Can you do me a favor ?
 Josh: Sure !
 How can i help you ?
-Elder: Can you make us a Campfire so we can eat some Food ?
+Elder: Could you make a Campfire for us so we can eat something, please ?
 * [Yes i can !] ->ElderQuest_Yes
 * (decline) [No not yet.] ->END
 
