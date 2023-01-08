@@ -20,7 +20,7 @@ You should start by gathering some small Stones.
 
 =ElderQuest_Again
 Elder: Have you changed your mind ?
-+ [Yes im ready now.] ->ElderQuest_Yes
++ [Im ready now.] ->ElderQuest_Yes
 + [No] 
 
 ->END
