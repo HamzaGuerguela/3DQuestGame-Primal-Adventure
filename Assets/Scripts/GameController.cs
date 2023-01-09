@@ -11,8 +11,14 @@ public class GameController : MonoBehaviour
     private PlayerController player;
     private DialogueController dialogueController;
 
-   [SerializeField] private GameObject menu;
+    [SerializeField] private GameObject menu;
+
+    [SerializeField] private GameObject playerObject;
+
+    [SerializeField] private Animator fadeAnimator;
+    
     private GameInput Input;
+    
     
     
     
@@ -22,6 +28,7 @@ public class GameController : MonoBehaviour
     {
         Input = new GameInput();
         Input.UI.Escape.performed += EscapePressed;
+        
         
         player = FindObjectOfType<PlayerController>();
         if (player == null)
@@ -60,7 +67,7 @@ public class GameController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         player.DisableInput();
     }
-    private void EnterPlayMode()
+    public void EnterPlayMode()
     {
         // In the editor: Unlock with ESC.
         Cursor.lockState = CursorLockMode.Locked;
@@ -68,12 +75,35 @@ public class GameController : MonoBehaviour
     }
 
 
-    private void EnterDialogueMode()
+    public void EnterDialogueMode()
     {
         Cursor.lockState = CursorLockMode.None;
         player.DisableInput();
     }
 
+    public void EnterCutsceneMode()
+    {
+        fadeAnimator.Play("ANIM_Fade_In");
+        Cursor.lockState = CursorLockMode.Locked;
+        player.DisableInput();
+    }
+
+    public void CutsceneFadeOut()
+    {
+        fadeAnimator.Play("ANIM_Fade_Out");
+        
+    }
+
+    public void ActivatePlayer()
+    {
+        playerObject.SetActive(true);
+    }
+    
+    public void DeactivatePlayer()
+    {
+        playerObject.SetActive(false);
+    }
+    
     #endregion
 
 
