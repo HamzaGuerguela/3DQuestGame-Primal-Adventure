@@ -33,6 +33,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Minigame",
+                    "type": "Button",
+                    "id": "1038e83c-ea68-499e-bdd1-74b8a7084d9d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Sprint",
                     "type": "Button",
                     "id": "24d2e20e-8b90-4ad3-93b9-f7094b28632c",
@@ -188,17 +197,6 @@
                 },
                 {
                     "name": "",
-                    "id": "0ca2d2fb-fdfe-49fa-ae36-e0c030d875eb",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "fe652750-0771-4a47-a0ec-7ccfbe2f71c7",
                     "path": "<Keyboard>/e",
                     "interactions": "",
@@ -238,6 +236,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ad96fb62-5a4e-4357-b681-717e74267d5f",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Minigame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d211883b-a584-4a40-ad48-51ce9f1154c7",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Minigame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
