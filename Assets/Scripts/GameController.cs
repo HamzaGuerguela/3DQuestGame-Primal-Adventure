@@ -20,9 +20,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject bigStone;
     
     private GameInput Input;
-    
-    
-    
+
+
     #region UnityEventFunctions
 
     private void Awake()
