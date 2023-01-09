@@ -16,9 +16,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject playerObject;
 
     [SerializeField] private Animator fadeAnimator;
+
+    [SerializeField] private GameObject bigStone;
     
     private GameInput Input;
-    
     
     
     
@@ -97,6 +98,7 @@ public class GameController : MonoBehaviour
     public void ActivatePlayer()
     {
         playerObject.SetActive(true);
+        Destroy(bigStone);
     }
     
     public void DeactivatePlayer()
