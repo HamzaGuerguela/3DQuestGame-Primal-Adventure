@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
 
+    
     private PlayerController player;
     private DialogueController dialogueController;
 
@@ -16,10 +17,11 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject playerObject;
 
     [SerializeField] private Animator fadeAnimator;
-
-    [SerializeField] private GameObject bigStone;
     
+
     private GameInput Input;
+    
+    
 
 
     #region UnityEventFunctions
@@ -142,26 +144,21 @@ public class GameController : MonoBehaviour
     public void CutsceneFadeOut()
     {
         fadeAnimator.Play("ANIM_Fade_In");
-        Debug.Log("TEST");
+        
     }
 
     public void ActivatePlayer()
     {
         playerObject.SetActive(true);
-        Destroy(bigStone);
+        
     }
     
     public void DeactivatePlayer()
     {
         playerObject.SetActive(false);
     }
-
-    public void AnimEventDeactivateAnimator()
-    {
-        
-    }
     
-
+    
     #endregion
     
 }

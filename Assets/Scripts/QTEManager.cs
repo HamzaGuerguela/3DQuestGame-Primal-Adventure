@@ -10,8 +10,9 @@ public class QteManager : MonoBehaviour
     #region Inspector
 
     private GameInput input;
-    
-    
+
+
+    [SerializeField] private GameObject cutscene1;
     public bool eventWon;
 
     private bool myFunctionCalled = false;
@@ -20,7 +21,12 @@ public class QteManager : MonoBehaviour
     public int maxHealth;
 
     public BarScript barScript;
-    
+
+    [Header("Cutscene Objects")]
+    public GameObject bigStone;
+    public GameObject stone;
+    public GameObject fakePlayer;
+
 
     #endregion
 
@@ -78,7 +84,13 @@ public class QteManager : MonoBehaviour
     private void EventWon()
     {
         eventWon = true;
+        Invoke("DelayedStoneDestroy", 7f);
         Debug.Log("WIN");
+    }
+
+    private void DelayedStoneDestroy()
+    {
+        Destroy(stone);
     }
 
     public void QteResult()
@@ -96,6 +108,19 @@ public class QteManager : MonoBehaviour
     private void QteLost()
     {
         FindObjectOfType<GameController>().CutsceneFadeOut();
+        Invoke("DelayedPlayerEnable",1f);
+        FindObjectOfType<PlayableDirector>().Stop();
+        Debug.Log("lost");
         
     }
+
+    private void DelayedPlayerEnable()
+    {
+        FindObjectOfType<GameController>().ActivatePlayer();
+        fakePlayer.SetActive(false);
+        bigStone.SetActive(true);
+        stone.SetActive(true);
+    }
+    
+    
 }

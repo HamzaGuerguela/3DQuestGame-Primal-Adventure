@@ -38,6 +38,11 @@ public class Interaction : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        
+    }
+
     #endregion
 
     public void Execute()
