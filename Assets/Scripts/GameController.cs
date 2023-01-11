@@ -81,30 +81,6 @@ public class GameController : MonoBehaviour
         player.DisableInput();
     }
 
-    public void EnterCutsceneMode()
-    {
-        fadeAnimator.Play("ANIM_Fade_In");
-        Cursor.lockState = CursorLockMode.Locked;
-        player.DisableInput();
-    }
-
-    public void CutsceneFadeOut()
-    {
-        fadeAnimator.Play("ANIM_Fade_Out");
-        
-    }
-
-    public void ActivatePlayer()
-    {
-        playerObject.SetActive(true);
-        Destroy(bigStone);
-    }
-    
-    public void DeactivatePlayer()
-    {
-        playerObject.SetActive(false);
-    }
-    
     #endregion
 
 
@@ -118,6 +94,9 @@ public class GameController : MonoBehaviour
     {
         EnterPlayMode();
     }
+
+
+    #region Menu
 
     private void EscapePressed(InputAction.CallbackContext _)
     {
@@ -147,5 +126,42 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+
+    #endregion
+
+    #region Timeline
+
+    public void EnterCutsceneMode()
+    {
+        fadeAnimator.Play("ANIM_Fade_In");
+        Cursor.lockState = CursorLockMode.Locked;
+        player.DisableInput();
+    }
+
+    public void CutsceneFadeOut()
+    {
+        fadeAnimator.Play("ANIM_Fade_In");
+        Debug.Log("TEST");
+    }
+
+    public void ActivatePlayer()
+    {
+        playerObject.SetActive(true);
+        Destroy(bigStone);
+    }
+    
+    public void DeactivatePlayer()
+    {
+        playerObject.SetActive(false);
+    }
+
+    public void AnimEventDeactivateAnimator()
+    {
+        
+    }
+    
+
+    #endregion
     
 }

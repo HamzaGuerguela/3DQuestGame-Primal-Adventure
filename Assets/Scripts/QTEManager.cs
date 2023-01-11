@@ -3,14 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Playables;
 
 public class QteManager : MonoBehaviour
 {
     #region Inspector
 
     private GameInput input;
+    
+    
+    public bool eventWon;
 
-    bool myFunctionCalled = false;
+    private bool myFunctionCalled = false;
     
     public int currentHealth;
     public int maxHealth;
@@ -73,6 +77,25 @@ public class QteManager : MonoBehaviour
 
     private void EventWon()
     {
+        eventWon = true;
         Debug.Log("WIN");
+    }
+
+    public void QteResult()
+    {
+        if (!eventWon)
+        {
+            QteLost();
+        }
+        else
+        {
+            return;
+        }
+    }
+    
+    private void QteLost()
+    {
+        FindObjectOfType<GameController>().CutsceneFadeOut();
+        
     }
 }
