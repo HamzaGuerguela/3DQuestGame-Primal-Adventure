@@ -22,6 +22,8 @@ public class QteManager : MonoBehaviour
 
     public BarScript barScript;
 
+    public GameObject text;
+
     [Header("Cutscene Objects")]
     public GameObject bigStone;
     public GameObject stone;
@@ -62,6 +64,8 @@ public class QteManager : MonoBehaviour
     {
         if (currentHealth >= maxHealth && !myFunctionCalled)
         {
+            text.SetActive(false);
+            Time.timeScale = 1.0f;
             myFunctionCalled = true;
             Invoke("EventWon", 0f);
         }
@@ -95,9 +99,13 @@ public class QteManager : MonoBehaviour
 
     public void QteResult()
     {
+        Time.timeScale = 1.0f;
+
         if (!eventWon)
         {
             QteLost();
+            currentHealth = 0;
+            barScript.SetHealth(currentHealth);
         }
         else
         {
