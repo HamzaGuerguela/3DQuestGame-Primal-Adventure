@@ -16,14 +16,19 @@ public class QteManager : MonoBehaviour
     public bool eventWon;
 
     private bool myFunctionCalled = false;
-    
-    public int currentHealth;
-    public int maxHealth;
 
+    private bool canTakeDamage;
+    
     public BarScript barScript;
 
     public GameObject text;
 
+    
+    [Header("Bar Values")]
+    public int currentHealth;
+    public int maxHealth;
+    
+    
     [Header("Cutscene Objects")]
     public GameObject bigStone;
     public GameObject stone;
@@ -42,7 +47,8 @@ public class QteManager : MonoBehaviour
 
     private void Start()
     {
-        
+        text.SetActive(false);
+        canTakeDamage = false;
     }
 
     private void OnEnable()
@@ -68,6 +74,7 @@ public class QteManager : MonoBehaviour
             Time.timeScale = 1.0f;
             myFunctionCalled = true;
             Invoke("EventWon", 0f);
+            
         }
     }
 
@@ -80,9 +87,12 @@ public class QteManager : MonoBehaviour
 
     void TakeDamage(int damage)
     {
-        currentHealth += damage;
+        if (canTakeDamage)
+        {
+            currentHealth += damage;
         
-        barScript.SetHealth(currentHealth);
+            barScript.SetHealth(currentHealth);
+        }
     }
 
     private void EventWon()
@@ -97,9 +107,17 @@ public class QteManager : MonoBehaviour
         Destroy(stone);
     }
 
+    public void TimelineEventAfterFade()
+    {
+        canTakeDamage = true;
+        text.SetActive(true);
+    }
+        
     public void QteResult()
     {
         Time.timeScale = 1.0f;
+        canTakeDamage = false;
+        text.SetActive(false);
 
         if (!eventWon)
         {
