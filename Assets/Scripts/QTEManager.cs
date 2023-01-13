@@ -23,6 +23,8 @@ public class QteManager : MonoBehaviour
 
     public GameObject text;
 
+    public GameObject thisObject;
+
     
     [Header("Bar Values")]
     public int currentHealth;
@@ -112,6 +114,8 @@ public class QteManager : MonoBehaviour
         canTakeDamage = true;
         text.SetActive(true);
     }
+    
+    
         
     public void QteResult()
     {
@@ -122,8 +126,6 @@ public class QteManager : MonoBehaviour
         if (!eventWon)
         {
             QteLost();
-            currentHealth = 0;
-            barScript.SetHealth(currentHealth);
         }
         else
         {
@@ -143,9 +145,12 @@ public class QteManager : MonoBehaviour
     private void DelayedPlayerEnable()
     {
         FindObjectOfType<GameController>().ActivatePlayer();
+        currentHealth = 0;
+        barScript.SetHealth(currentHealth);
         fakePlayer.SetActive(false);
         bigStone.SetActive(true);
         stone.SetActive(true);
+        thisObject.SetActive(false);
     }
     
     

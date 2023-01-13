@@ -13321,7 +13321,7 @@ MonoBehaviour:
   rangeG: 0
   rangeB: 0
   AdjustedColor: {r: 0.3895393, g: 0.9528302, b: 0.23820755, a: 1}
-  hitPosGizmo: {x: -50.932648, y: 14.540497, z: 78.02522}
+  hitPosGizmo: {x: -50.270348, y: 26.61163, z: 29.242802}
   hitNormal: {x: -0.09273073, y: 0.98118913, z: -0.16931883}
 --- !u!33 &152452692
 MeshFilter:
@@ -25048,7 +25048,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Space
+  m_text: Press Any Key
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -26584,6 +26584,18 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 2009404773}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 1471067676}
           m_TargetAssemblyTypeName: GameController, Assembly-CSharp
           m_MethodName: CutsceneFadeOut
@@ -26692,18 +26704,6 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: QteManager, Assembly-CSharp
           m_MethodName: QteResult
           m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 2009404773}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -30702,6 +30702,7 @@ MonoBehaviour:
   eventWon: 0
   barScript: {fileID: 1089932670}
   text: {fileID: 1284964109}
+  thisObject: {fileID: 2009404773}
   currentHealth: 0
   maxHealth: 400
   bigStone: {fileID: 912834313}

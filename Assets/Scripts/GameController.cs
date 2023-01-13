@@ -54,6 +54,7 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         EnterPlayMode();
+        Time.timeScale = 1f;
     }
 
     private void OnDisable()
@@ -110,11 +111,14 @@ public class GameController : MonoBehaviour
         {
             menu.SetActive(false);
             EnterPlayMode();
+            
+            
         }
         else if (!menu.activeInHierarchy)
         {
             menu.SetActive(true);
             EnterPauseMode();
+            
         }
     }
 
