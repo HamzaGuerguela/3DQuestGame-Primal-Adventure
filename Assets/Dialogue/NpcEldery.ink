@@ -3,17 +3,18 @@
 {ElderQuest.decline: ->ElderQuest_Again}
 ->ElderQuest
 =ElderQuest
-Elder: Hey there.
+Elder: Hey Utaka !
 Can you do me a favor ?
-Josh: Sure !
+Utaka: Sure !
 How can i help you ?
-Elder: Could you make a Campfire for us so we can eat something, please ?
+Elder: Its pretty cold today.
+Could you make a Fire for us ?
 * [Yes i can !] ->ElderQuest_Yes
 * (decline) [No not yet.] ->END
 
 =ElderQuest_Yes
 Elder: Great !
-You should start by gathering some small Stones.
+First you need to find a way to make small Stones for the Fireplace.
 ~ Unity_Event("Quest_Stones_Start")
 
 ->END
@@ -37,7 +38,7 @@ You have found all Stones !
 ->END
 
 =followUpFalse
-Elder: You dont have enough Stones yet.
-Keep on searching !
+Elder: You dont have enough Stones yet. 
+Maybe you could push a big Stone over a Cliff, it might shatter into smaller pieces.
 
 ->END
