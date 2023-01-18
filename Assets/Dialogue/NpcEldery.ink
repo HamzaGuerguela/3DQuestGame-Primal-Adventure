@@ -1,4 +1,5 @@
 === Elder ===
+{fulfilled2: ->checkWood}
 {fulfilled: ->ElderQuest_running}
 {ElderQuest_Yes: ->ElderQuest_running}
 {ElderQuest.decline: ->ElderQuest_Again}
@@ -34,20 +35,28 @@ Elder: Have you changed your mind ?
 ->END
 
 =fulfilled
-Elder: Great.
-You have found all Stones !
+Elder: Great you have found all Stones !
 ~ Unity_Event("SetActive_Stones")
-Elder: Now you should collect firewood
 ->fulfilled2
-~ Unity_Event("Firewood_Quest")
 
 
 =fulfilled2
-Elder: blblblb
+Elder: Now you should find some firewood.
+Utaka: Alright will do !
+~ Unity_Event("Firewood_Quest")
+->END
+
+
+
+
+
+=checkWood
+
 {Get_State("Firewood") > 2: ->fulfilled3|-> followUpFalse2}
 
-
 ->END
+
+
 
 =followUpFalse
 Elder: You dont have enough Stones yet. 
@@ -57,11 +66,14 @@ Maybe you could push a big Stone over a Cliff, it might shatter into smaller pie
 
 =followUpFalse2
 Elder: You dont have enough Wood yet.
+Elder: Look for them on the opposite Site from where you found the Stones.
 
 ->END
 
 =fulfilled3
-Elder: Now you should talk to your Brother.
+Elder: Awesome ! Now you should talk to your Brother.
+Elder: He will tell you where to find Firestones.
+Utaka: Okay, thanks for your help.
 ~ Unity_Event("ActivateRiver_Quest")
 
 ->END
