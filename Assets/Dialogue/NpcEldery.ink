@@ -47,27 +47,33 @@ Utaka: Alright will do !
 ~ Unity_Event("Firewood_Quest")
 ->END
 
-
-
-
-
 =checkWood
 
 {Get_State("Firewood") > 2: ->fulfilled3|-> followUpFalse2}
 
 ->END
 
+
+
+
+
 =checkWood2
 
-{Get_State("Firewood2") > 3: ->fulfilled4|-> followUpFalse2}
+{Get_State("Firewood") > 3: ->fulfilled4|-> followUpFalse3}
 
 ->END
+
+
 
 =fulfilled4
 Elder: Thanks again for all your help Utaka.
 Utaka: Im glad i could help.
 
 ->END
+
+
+
+
 
 =followUpFalse
 Elder: You dont have enough Stones yet. 
@@ -86,6 +92,13 @@ Elder: Awesome ! Now you should talk to your Brother.
 Elder: He will tell you where to find Firestones.
 Utaka: Okay, thanks for your help.
 ~ Unity_Event("ActivateRiver_Quest")
+->fulfilled4
+
+->END
+
+=followUpFalse3
+Elder: You dont have enough Wood yet.
+Elder: Look for them on the opposite Site from where you found the Stones.
 
 ->END
 
