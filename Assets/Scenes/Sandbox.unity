@@ -1579,7 +1579,7 @@ MonoBehaviour:
   topTint: {r: 0.8584906, g: 0.774893, b: 0.26321647, a: 1}
   bottomTint: {r: 0.4811321, g: 0.3512043, b: 0.18836774, a: 1}
   castShadow: 0
-  m_InstantiatedMaterial: {fileID: 1717588869}
+  m_InstantiatedMaterial: {fileID: 241398559}
 --- !u!114 &152452691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13104,6 +13104,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: a2a203263fe8750478b742815dc3c932, type: 3}
+--- !u!21 &241398559
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Unlit_GrassForCompute(Clone)
+  m_Shader: {fileID: 4800000, guid: d8c7fa27e24eb7a4da32f021ad2edcff, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _AmbientAdjustment: 0
+    - _BlendFloor: 0
+    - _Fade: 0
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &250172661
 GameObject:
   m_ObjectHideFlags: 0
@@ -21030,6 +21057,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8370787e056e3fb479d02bdac906f91e, type: 3}
+--- !u!1 &909654243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3636560108863524803, guid: 7bd81d827897cc8428d945b52042386b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1379086028}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &911061592 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5477343207085357501, guid: 93401c7cd31efbd46b4c29651384b1f4,
@@ -21812,6 +21845,7 @@ GameObject:
   - component: {fileID: 1046511327}
   - component: {fileID: 1046511328}
   - component: {fileID: 1046511329}
+  - component: {fileID: 1046511330}
   m_Layer: 0
   m_Name: Talk
   m_TagString: Untagged
@@ -22048,6 +22082,30 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1046511330}
+          m_TargetAssemblyTypeName: Collectable, Assembly-CSharp
+          m_MethodName: Collect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 909654243}
+          m_TargetAssemblyTypeName: Collectable, Assembly-CSharp
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!114 &1046511329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22063,6 +22121,24 @@ MonoBehaviour:
   stateUpdates:
   - id: StartQuest
     amount: 1
+--- !u!114 &1046511330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046511324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ef1ab635cadbd24796dc3f94ce6c567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state:
+    id: Firewood
+    amount: 1
+  onCollected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1049829211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26060,10 +26136,20 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7041422066559169714, guid: 7bd81d827897cc8428d945b52042386b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7129463899877883195, guid: 7bd81d827897cc8428d945b52042386b,
         type: 3}
       propertyPath: m_Name
       value: Duckmen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363576440485404992, guid: 7bd81d827897cc8428d945b52042386b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bd81d827897cc8428d945b52042386b, type: 3}
@@ -28943,33 +29029,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 687409813}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1717588869
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Unlit_GrassForCompute(Clone)
-  m_Shader: {fileID: 4800000, guid: d8c7fa27e24eb7a4da32f021ad2edcff, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs: []
-    m_Ints: []
-    m_Floats:
-    - _AmbientAdjustment: 0
-    - _BlendFloor: 0
-    - _Fade: 0
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1001 &1737186119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31558,6 +31617,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229196350719130315, guid: 4c5717d8465eb264db4633a6503eed24,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2255997272104899180, guid: 4c5717d8465eb264db4633a6503eed24,
         type: 3}
