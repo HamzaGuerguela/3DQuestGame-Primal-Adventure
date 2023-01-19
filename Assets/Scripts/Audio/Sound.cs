@@ -8,9 +8,7 @@ public class Sound
 {
     public enum AudioTypes { soundEffect, music }
     public AudioTypes audioType;
-    
-    
-    
+
     [HideInInspector] public AudioSource source;
     public AudioClip clip;
     public string clipName;

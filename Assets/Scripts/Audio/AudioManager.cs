@@ -100,6 +100,9 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+
+    #region Play Sound Events
+
     public void PlayerSoundRun()
     {
         footSteps.PlayOneShot(stepSounds[Random.Range(0, 4)]);
@@ -141,5 +144,7 @@ public class AudioManager : MonoBehaviour
     {
         boneSoundAudioSource.PlayOneShot(boneSounds[Random.Range(0, 2)]);
     }
+
+    #endregion
 }
 

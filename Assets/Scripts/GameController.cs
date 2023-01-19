@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
     private DialogueController dialogueController;
 
     [SerializeField] private GameObject menu;
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject initialMenu;
 
     [SerializeField] private GameObject playerObject;
 
@@ -111,14 +113,14 @@ public class GameController : MonoBehaviour
         {
             menu.SetActive(false);
             EnterPlayMode();
-            
+            pauseMenu.SetActive(false);
             
         }
         else if (!menu.activeInHierarchy)
         {
             menu.SetActive(true);
             EnterPauseMode();
-            
+            initialMenu.SetActive(true);
         }
     }
 

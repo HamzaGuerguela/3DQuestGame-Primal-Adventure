@@ -1,4 +1,5 @@
 === Elder ===
+{fulfilled4: ->checkWood2}
 {fulfilled2: ->checkWood}
 {fulfilled: ->ElderQuest_running}
 {ElderQuest_Yes: ->ElderQuest_running}
@@ -56,7 +57,17 @@ Utaka: Alright will do !
 
 ->END
 
+=checkWood2
 
+{Get_State("Firewood2") > 3: ->fulfilled4|-> followUpFalse2}
+
+->END
+
+=fulfilled4
+Elder: Thanks again for all your help Utaka.
+Utaka: Im glad i could help.
+
+->END
 
 =followUpFalse
 Elder: You dont have enough Stones yet. 
