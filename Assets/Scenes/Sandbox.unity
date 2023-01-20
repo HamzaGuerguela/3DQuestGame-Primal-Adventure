@@ -510,6 +510,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 71094156175389266, guid: e712c5e89093e8748bc59206a5076f8c, type: 3}
+--- !u!1 &27828235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8181880726982776976, guid: d2180056d26567848868efd4b1abe15e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1136322300}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &28755715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16597,6 +16603,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2701142653113068456, guid: 2a81d660089a108489cd8c60a77dc2f5, type: 3}
+--- !u!1 &367083454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8181880726982776976, guid: d2180056d26567848868efd4b1abe15e,
+    type: 3}
+  m_PrefabInstance: {fileID: 216269646}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &373854978 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 300217488781219718, guid: 7c8da2f5f9c8fa44eb411d5f6c869893,
@@ -19275,7 +19287,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 47.660492, y: 24.215652, z: 117.03015, w: 17.381744}
+  m_margin: {x: 47.660492, y: 24.215652, z: 511.2075, w: 17.381744}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -21833,6 +21845,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 2105969370}
+          m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
         - m_Target: {fileID: 1804982537}
           m_TargetAssemblyTypeName: Collectable, Assembly-CSharp
           m_MethodName: Collect
@@ -22820,8 +22844,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -22856,7 +22880,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 10, y: 0, z: 0, w: 0}
+  m_margin: {x: 10, y: 0, z: 1947.1364, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -24768,8 +24792,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1258929882}
   - component: {fileID: 1258929883}
-  - component: {fileID: 1258929885}
   - component: {fileID: 1258929884}
+  - component: {fileID: 1258929885}
   m_Layer: 0
   m_Name: TalkBrother
   m_TagString: Untagged
@@ -24806,7 +24830,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onInteracted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1258929884}
+        m_TargetAssemblyTypeName: InkDialogue, Assembly-CSharp
+        m_MethodName: StartDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   nextInteraction: {fileID: 0}
 --- !u!114 &1258929884
 MonoBehaviour:
@@ -24820,7 +24856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edb95de903291de4f8164bbf4bf2cc90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePath: 
+  dialoguePath: Brother
 --- !u!114 &1258929885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24833,7 +24869,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b728a51a2827fe42af0d0bb0febb0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkEvents: []
+  inkEvents:
+  - name: Quest_Firestones_Start
+    onEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 27828235}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - name: Quest_River_Start
+    onEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 367083454}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!1 &1274566712
 GameObject:
   m_ObjectHideFlags: 0
@@ -31335,7 +31403,7 @@ PrefabInstance:
     - target: {fileID: 6330158737082160458, guid: 4c5717d8465eb264db4633a6503eed24,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6435819441092496020, guid: 4c5717d8465eb264db4633a6503eed24,
         type: 3}
@@ -32851,6 +32919,12 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!135 &2105969370 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 6330158737082160458, guid: 4c5717d8465eb264db4633a6503eed24,
+    type: 3}
+  m_PrefabInstance: {fileID: 2027619227}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2107179754
 PrefabInstance:
   m_ObjectHideFlags: 0
