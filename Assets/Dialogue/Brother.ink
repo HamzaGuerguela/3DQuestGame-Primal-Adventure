@@ -1,6 +1,6 @@
 === Brother ===
-// Das nächste mal wenn man mit diesem npc redet (also nachdem BrotherStart einmal abgeschloßen wurde und die Dialogue UI sich wieder geschloßen hat) soll BrotherQuest_running geprüft werden.
-{BrotherStart: ->BrotherQuest_running}
+// Das nächste mal wenn man mit diesem npc redet soll BrotherQuest_running geprüft werden.
+{????: ->BrotherQuest_running}
 = BrotherStart
 Brother: Hey Utaka ! I see, you need to know where to find Firestones right ?
 Utaka: Yes thats right !
@@ -26,7 +26,8 @@ Utaka: Alright i will try my best !
 
 ->fulfilledBrother
 Brother: Good job you actually made it !
-Brother: Your last task will be to finally light up the fire. 
+Brother: Your last task will be to finally light up the fire.
+Utaka: Great ! Thanks for all your help Brother.
 ~ Unity_Event("Brother_completed")
 
 ->END
@@ -38,5 +39,6 @@ Brother: Your last task will be to finally light up the fire.
 Brother: I think a good place to jump over the water would be near the rock.
 Brother: And remeber to pick up 2 Firestones.
 Utaka: Okay thanks for you advice !
+
 ->END
 

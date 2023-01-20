@@ -156,8 +156,67 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireStone
       objectReference: {fileID: 0}
+    - target: {fileID: 7044905665977494785, guid: 2a961778356967041a5f5ed218e06a40,
+        type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044905665977494785, guid: 2a961778356967041a5f5ed218e06a40,
+        type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044905665977494785, guid: 2a961778356967041a5f5ed218e06a40,
+        type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4089381559005063757}
+    - target: {fileID: 7044905665977494785, guid: 2a961778356967041a5f5ed218e06a40,
+        type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044905665977494785, guid: 2a961778356967041a5f5ed218e06a40,
+        type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Collect
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044905665977494785, guid: 2a961778356967041a5f5ed218e06a40,
+        type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Collectable, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044905665977494785, guid: 2a961778356967041a5f5ed218e06a40,
+        type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a961778356967041a5f5ed218e06a40, type: 3}
+--- !u!1 &5669127659052266873 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2680622681081599191, guid: 2a961778356967041a5f5ed218e06a40,
+    type: 3}
+  m_PrefabInstance: {fileID: 7755116859105452462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4089381559005063757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5669127659052266873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ef1ab635cadbd24796dc3f94ce6c567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state:
+    id: Firestones
+    amount: 1
+  onCollected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &6272983338255517549 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4364454977770727107, guid: 2a961778356967041a5f5ed218e06a40,
