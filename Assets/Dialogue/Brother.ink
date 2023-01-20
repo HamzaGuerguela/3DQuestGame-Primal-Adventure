@@ -27,6 +27,7 @@ Utaka: Alright i will try my best !
 ->fulfilledBrother
 Brother: Good job you actually made it !
 Brother: Your last task will be to finally light up the fire.
+~ Unity_Event("Quest_Fire_Start")
 Utaka: Great ! Thanks for all your help Brother.
 ~ Unity_Event("Brother_completed")
 
