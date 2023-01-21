@@ -89,6 +89,10 @@ public class PlayerController : MonoBehaviour
     [Min(0)]
     [Tooltip("Time in sec the character has to be in the air before the animator reacts.")]
     [SerializeField] private float coyoteTime = 0.2f;
+
+
+    public GameObject playerRiverPos;
+    public GameObject playerObject;
     
     #endregion
 
@@ -418,6 +422,16 @@ public class PlayerController : MonoBehaviour
     {
         movementSpeed -= sprintSpeed;
         animator.speed = 1f;
+    }
+
+    #endregion
+
+    #region Timeline
+
+    public void CutscenePlayerPosition()
+    {
+        playerObject.transform.position = playerRiverPos.transform.position;
+        
     }
 
     #endregion

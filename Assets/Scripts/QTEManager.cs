@@ -13,6 +13,9 @@ public class QteManager : MonoBehaviour
 
 
     [SerializeField] private GameObject cutscene1;
+    [SerializeField] private GameObject cutscene2;
+    [SerializeField] private GameObject cutscene3;
+    
     public bool eventWon;
 
     private bool myFunctionCalled = false;
@@ -24,6 +27,10 @@ public class QteManager : MonoBehaviour
     public GameObject text;
 
     public GameObject thisObject;
+
+    public GameObject qteBar;
+    
+    public GameObject riverInteractbale;
 
     
     [Header("Bar Values")]
@@ -72,10 +79,12 @@ public class QteManager : MonoBehaviour
     {
         if (currentHealth >= maxHealth && !myFunctionCalled)
         {
+            eventWon = true;
             text.SetActive(false);
             Time.timeScale = 1.0f;
             myFunctionCalled = true;
             Invoke("EventWon", 0f);
+            Debug.Log("Update won");
             
         }
     }
@@ -106,7 +115,10 @@ public class QteManager : MonoBehaviour
 
     private void DelayedStoneDestroy()
     {
-        Destroy(stone);
+        if (stone != null)
+        {
+            Destroy(stone);
+        }
     }
 
     public void TimelineEventAfterFade()
@@ -135,23 +147,39 @@ public class QteManager : MonoBehaviour
     
     private void QteLost()
     {
+        qteBar.SetActive(false);
         FindObjectOfType<GameController>().CutsceneFadeOut();
         Invoke("DelayedPlayerEnable",1f);
-        FindObjectOfType<PlayableDirector>().Stop();
+        cutscene1.GetComponent<PlayableDirector>().Stop();
+        cutscene2.GetComponent<PlayableDirector>().Stop();
+       // cutscene3.GetComponent<PlayableDirector>().Stop();
         Debug.Log("lost");
         
+
     }
 
     private void DelayedPlayerEnable()
     {
+        fakePlayer.SetActive(false);
         FindObjectOfType<GameController>().ActivatePlayer();
         currentHealth = 0;
         barScript.SetHealth(currentHealth);
         fakePlayer.SetActive(false);
         bigStone.SetActive(true);
         stone.SetActive(true);
-        thisObject.SetActive(false);
+        qteBar.SetActive(false);
     }
-    
-    
+
+    public void ResetHealth()
+    {
+        eventWon = false;
+        currentHealth = 0;
+        barScript.SetHealth(currentHealth);
+        myFunctionCalled = false;
+    }
+
+    public void DestroyRiverInteractable()
+    {
+        Destroy(riverInteractbale);
+    }
 }

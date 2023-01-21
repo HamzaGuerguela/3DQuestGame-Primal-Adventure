@@ -1,6 +1,8 @@
 === Brother ===
 // Das nächste mal wenn man mit diesem npc redet soll BrotherQuest_running geprüft werden.
-{????: ->BrotherQuest_running}
+{BrotherStart: ->BrotherQuest_running}
+->BrotherStart
+
 = BrotherStart
 Brother: Hey Utaka ! I see, you need to know where to find Firestones right ?
 Utaka: Yes thats right !
@@ -24,7 +26,7 @@ Utaka: Alright i will try my best !
 
 
 
-->fulfilledBrother
+=fulfilledBrother
 Brother: Good job you actually made it !
 Brother: Your last task will be to finally light up the fire.
 ~ Unity_Event("Quest_Fire_Start")
@@ -36,7 +38,7 @@ Utaka: Great ! Thanks for all your help Brother.
 
 
 
-->followUpFalseBrother
+=followUpFalseBrother
 Brother: I think a good place to jump over the water would be near the rock.
 Brother: And remeber to pick up 2 Firestones.
 Utaka: Okay thanks for you advice !

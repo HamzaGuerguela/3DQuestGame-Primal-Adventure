@@ -163,6 +163,7 @@ public class GameController : MonoBehaviour
     {
         playerObject.SetActive(false);
         Time.timeScale = 0.3f;
+        
     }
     
     
