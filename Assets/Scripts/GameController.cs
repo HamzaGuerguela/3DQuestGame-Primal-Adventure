@@ -153,6 +153,18 @@ public class GameController : MonoBehaviour
         
     }
 
+    public void LastCutsceneFadeOut()
+    {
+        Time.timeScale = 1f;
+        fadeAnimator.Play("ANIM_Fade_Last");
+        Invoke("DelayedMainMenu", 9f);
+    }
+
+    private void DelayedMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    
     public void ActivatePlayer()
     {
         playerObject.SetActive(true);

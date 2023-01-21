@@ -128,7 +128,6 @@ public class QteManager : MonoBehaviour
     }
     
     
-        
     public void QteResult()
     {
         Time.timeScale = 1.0f;
@@ -152,7 +151,7 @@ public class QteManager : MonoBehaviour
         Invoke("DelayedPlayerEnable",1f);
         cutscene1.GetComponent<PlayableDirector>().Stop();
         cutscene2.GetComponent<PlayableDirector>().Stop();
-       // cutscene3.GetComponent<PlayableDirector>().Stop();
+        cutscene3.GetComponent<PlayableDirector>().Stop();
         Debug.Log("lost");
         
 
